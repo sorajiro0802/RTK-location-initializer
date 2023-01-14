@@ -1,1 +1,3 @@
 start.sh
+*venv
+.python-version
