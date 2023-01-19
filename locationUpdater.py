@@ -6,6 +6,10 @@ def makeBack(file_path):
     backup_name = f"backup_{file_path}"
     with open(backup_name, mode='w') as f:
         f.write(lines)
+def attention():
+    print(
+        "入力例: 35.40.52.9746 <== 35° 40′ 52.9746″\n"
+        )
     
 def main():
     pass
