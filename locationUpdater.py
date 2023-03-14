@@ -16,14 +16,15 @@ def makeBack(file_path):
         f.write(lines)
 
 def base60_to_decimal(base60_number):
-    base60_parts = [int(num) for num in base60_number.split('.')]
+    base60_parts = base60_number.split('.')
     # check input number
     if len(base60_parts) != 4:
         raise ValueError
-    degree = base60_parts[0]
-    minute = base60_parts[1] / 60
-    second = float("{}.{}".format(base60_parts[2], base60_parts[3])) / 60 / 60
-    return round(degree + minute + second, 8)
+    degree = int(base60_parts[0])
+    minute = int(base60_parts[1]) / 60
+    second = float(base60_parts[2]+"."+base60_parts[3]) / 60 / 60
+
+    return round(degree + minute + second, 9)
 
 def updateLLH(file_path, latitude, longitude, height):
     with open(file_path, mode='r') as f:
